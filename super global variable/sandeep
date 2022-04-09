@@ -1,0 +1,47 @@
+<?php
+echo 'this is Sandeep Terminal';
+echo PHP_EOL;
+echo 'The Sandeep Framework : varsion 1.x';
+echo PHP_EOL;
+
+$commands=[
+'--help' => 'This is help command',
+'--v' => '1.x',
+'--a' => 'for Addition',
+'--s'=>'for Subtraction',
+'--m'=>'for multiplication',
+'--d'=>'for division',
+'--r'=>'for reminder'
+
+];
+
+forEach($commands as $key => $value)
+{
+printf("%s\t:\t%s\n",$key,$value);
+}
+$output='';
+if(isset($argv[1])){
+$command=$argv[1];
+echo "\e[H\e[J";
+switch($commands){
+
+case'--v';
+$output='1.x';
+break;
+
+case '--a':
+  $x = readline('Entr a number 1:');
+   $y=readline('Enter a number 2:');
+
+$output = $x+$y;
+break;
+
+default: 
+ $output='Inavalid command supplied';
+break;
+}
+}
+echo $output;
+
+
+?>
